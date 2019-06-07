@@ -55,7 +55,10 @@ module LinkedIn
 
     def get(path, options={})
       url, params, headers = prepare_connection_params(path, options)
-
+      puts "NOLAN"
+      puts url.inspect
+      puts params.inspect
+      puts headers.inspect
       response = @connection.get(url, params, headers)
       Mash.from_json(response.body)
     end
